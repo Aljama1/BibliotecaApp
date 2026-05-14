@@ -1,0 +1,6 @@
+tipo,id,titulo,anio,fecha_adquisicion,autor,isbn,prestado,fecha_prestamo,fecha_inicio_disp,fecha_fin_disp,valoracion_media
+libro,0,Cien años de soledad,1967,2022-01-15,Gabriel García Márquez,8420471836,False,,,, 0.00
+libro,0,El quijote,1605,2021-06-01,Miguel de Cervantes,8420400017,False,,,,0.00
+libro,0,La sombra del viento,2001,2023-03-10,Carlos Ruiz Zafón,8408043641,False,,,,0.00
+libro,0,Harry Potter 1,1997,2022-09-20,J.K. Rowling,0439708184,False,,,,0.00
+libro,0,El principito,1943,2020-12-05,Antoine de Saint-Exupéry,0156013984,False,,,,0.00
