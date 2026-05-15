@@ -1,0 +1,28 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="BibliotecaApp.Vistas.VistaValoraciones"
+        Width="500" Height="350"
+        WindowStartupLocation="CenterOwner">
+
+    <DockPanel Margin="12">
+
+        <TextBlock x:Name="lblTitulo" DockPanel.Dock="Top"
+                   FontWeight="SemiBold" Margin="0,0,0,8"/>
+
+        <Button DockPanel.Dock="Bottom" Content="Cerrar"
+                HorizontalAlignment="Right" Margin="0,8,0,0"
+                Click="BtnCerrar_Click"/>
+
+        <DataGrid x:Name="dgValoraciones"
+                  AutoGenerateColumns="False"
+                  IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Usuario"    Binding="{Binding IdUsuario}"    Width="120"/>
+                <DataGridTextColumn Header="Puntuación" Binding="{Binding Puntuacion}"   Width="90"/>
+                <DataGridTextColumn Header="Comentario" Binding="{Binding Comentario}"   Width="180"/>
+                <DataGridTextColumn Header="Palabras"   Binding="{Binding PalabrasClave}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </DockPanel>
+</Window>

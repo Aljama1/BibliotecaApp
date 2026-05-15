@@ -1,0 +1,12 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="BibliotecaApp.Vistas.MensajeDialog"
+        Width="320" Height="150"
+        CanResize="False"
+        WindowStartupLocation="CenterOwner">
+
+    <StackPanel Margin="16" Spacing="16" VerticalAlignment="Center">
+        <TextBlock x:Name="lblMensaje" TextWrapping="Wrap"/>
+        <Button Content="Aceptar" HorizontalAlignment="Center" Click="BtnAceptar_Click"/>
+    </StackPanel>
+</Window>

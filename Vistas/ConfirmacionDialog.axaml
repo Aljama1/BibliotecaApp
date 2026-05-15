@@ -1,0 +1,15 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="BibliotecaApp.Vistas.ConfirmacionDialog"
+        Width="320" Height="150"
+        CanResize="False"
+        WindowStartupLocation="CenterOwner">
+
+    <StackPanel Margin="16" Spacing="16" VerticalAlignment="Center">
+        <TextBlock x:Name="lblPregunta" TextWrapping="Wrap"/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="12">
+            <Button Content="Sí" Click="BtnSi_Click" Width="80"/>
+            <Button Content="No" Click="BtnNo_Click" Width="80"/>
+        </StackPanel>
+    </StackPanel>
+</Window>

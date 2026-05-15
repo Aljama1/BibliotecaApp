@@ -1,0 +1,48 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="BibliotecaApp.Vistas.DialogoArticulo"
+        Title="Artículo"
+        Width="420" Height="460"
+        CanResize="False"
+        WindowStartupLocation="CenterOwner">
+
+    <StackPanel Margin="16" Spacing="10">
+
+        <!-- Campos comunes -->
+        <TextBlock Text="Título:" FontWeight="SemiBold"/>
+        <TextBox x:Name="txtTitulo"/>
+
+        <TextBlock Text="Autor:"/>
+        <TextBox x:Name="txtAutor"/>
+
+        <TextBlock Text="Año:"/>
+        <TextBox x:Name="txtAnio"/>
+
+        <TextBlock Text="Fecha de adquisición:"/>
+        <DatePicker x:Name="dpFechaAdq"/>
+
+        <!-- Campos solo para libro -->
+        <StackPanel x:Name="panelLibro">
+            <TextBlock Text="ISBN-10:" Margin="0,4,0,0"/>
+            <TextBox x:Name="txtIsbn"/>
+        </StackPanel>
+
+        <!-- Campos solo para audiolibro -->
+        <StackPanel x:Name="panelAudio" IsVisible="False">
+            <TextBlock Text="Fecha inicio disponibilidad:" Margin="0,4,0,0"/>
+            <DatePicker x:Name="dpInicio"/>
+            <TextBlock Text="Fecha fin disponibilidad:" Margin="0,4,0,0"/>
+            <DatePicker x:Name="dpFin"/>
+        </StackPanel>
+
+        <!-- Mensaje de error -->
+        <TextBlock x:Name="lblError" Foreground="Red" TextWrapping="Wrap" IsVisible="False"/>
+
+        <!-- Botones -->
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="8" Margin="0,8,0,0">
+            <Button x:Name="btnGuardar" Content="Guardar" Click="BtnGuardar_Click"/>
+            <Button x:Name="btnCancelar" Content="Cancelar" Click="BtnCancelar_Click"/>
+        </StackPanel>
+
+    </StackPanel>
+</Window>

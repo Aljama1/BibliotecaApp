@@ -1,0 +1,60 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="BibliotecaApp.Vistas.VentanaPrincipal"
+        Title="Biblioteca Municipal"
+        Width="950" Height="600"
+        MinWidth="800" MinHeight="500">
+
+    <DockPanel Margin="8">
+
+        <!-- Barra de búsqueda y filtros arriba -->
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Spacing="8" Margin="0,0,0,8">
+            <TextBlock Text="Buscar:" VerticalAlignment="Center"/>
+            <TextBox x:Name="txtBuscar" Width="200" Watermark="Título..."
+                     TextChanged="TxtBuscar_TextChanged"/>
+            <TextBlock Text="Tipo:" VerticalAlignment="Center"/>
+            <ComboBox x:Name="cmbTipo" Width="130" SelectionChanged="CmbTipo_SelectionChanged">
+                <ComboBoxItem Content="Todos" IsSelected="True"/>
+                <ComboBoxItem Content="Libros"/>
+                <ComboBoxItem Content="Audiolibros"/>
+            </ComboBox>
+            <Button Content="Limpiar" Click="BtnLimpiar_Click"/>
+        </StackPanel>
+
+        <!-- Botones de acciones abajo -->
+        <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" Spacing="6" Margin="0,8,0,0">
+            <Button x:Name="btnNuevoLibro"    Content="+ Libro"      Click="BtnNuevoLibro_Click"/>
+            <Button x:Name="btnNuevoAudio"    Content="+ Audiolibro" Click="BtnNuevoAudio_Click"/>
+            <Button x:Name="btnEditar"        Content="Editar"       Click="BtnEditar_Click"/>
+            <Button x:Name="btnEliminar"      Content="Eliminar"     Click="BtnEliminar_Click"/>
+            <Separator/>
+            <Button x:Name="btnPrestar"       Content="Prestar"      Click="BtnPrestar_Click"/>
+            <Button x:Name="btnDevolver"      Content="Devolver"     Click="BtnDevolver_Click"/>
+            <Separator/>
+            <Button x:Name="btnValoracion"    Content="Valorar"      Click="BtnValoracion_Click"/>
+            <Button x:Name="btnVerValoraciones" Content="Ver valoraciones" Click="BtnVerValoraciones_Click"/>
+            <Separator/>
+            <Button x:Name="btnExportarCSV"   Content="Exportar CSV" Click="BtnExportarCSV_Click"/>
+            <Button x:Name="btnImportarCSV"   Content="Importar CSV" Click="BtnImportarCSV_Click"/>
+        </StackPanel>
+
+        <!-- Tabla principal con todos los artículos -->
+        <DataGrid x:Name="dgCatalogo"
+                  AutoGenerateColumns="False"
+                  IsReadOnly="True"
+                  SelectionMode="Single"
+                  CanUserResizeColumns="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Tipo"       Binding="{Binding Tipo}"       Width="90"/>
+                <DataGridTextColumn Header="Título"     Binding="{Binding Titulo}"     Width="200"/>
+                <DataGridTextColumn Header="Autor"      Binding="{Binding Autor}"      Width="140"/>
+                <DataGridTextColumn Header="Año"        Binding="{Binding Anio}"       Width="60"/>
+                <DataGridTextColumn Header="ISBN"       Binding="{Binding Isbn}"       Width="110"/>
+                <DataGridTextColumn Header="Estado"     Binding="{Binding Estado}"     Width="100"/>
+                <DataGridTextColumn Header="Valoración" Binding="{Binding ValMedia}"   Width="90"/>
+                <DataGridTextColumn Header="Adquisición" Binding="{Binding FechaAdq}" Width="100"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </DockPanel>
+</Window>
